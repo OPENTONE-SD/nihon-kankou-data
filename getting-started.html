@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>観光情報データの利用について - JAPAN 47 GO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #A7001D;
+        }
+
+        .logo::before {
+            content: "🗾";
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #A7001D;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #A7001D 0%, #d32f2f 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: #A7001D;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #A7001D;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .download-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-card h3 {
+            font-size: 20px;
+            color: #A7001D;
+            margin-bottom: 15px;
+        }
+
+        .download-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #A7001D;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #8a0018;
+        }
+
+        .contact-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: #2196F3;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #1976D2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">JAPAN 47 GO</div>
+                <nav>
+                    <ul>
+                        <li><a href="#database">全国観光情報データベース</a></li>
+                        <li><a href="#events">イベントカレンダーから探す</a></li>
+                        <li><a href="#themes">テーマから探す</a></li>
+                        <li><a href="#areas">エリアから探す</a></li>
+                        <li><a href="#stories">地域ストーリー</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>観光情報データの利用について</h1>
+            <p>日本観光振興協会が提供する観光データベースとデジタルコンテンツをご活用ください</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <h2>日本観光振興協会デジタルコンテンツの活用について</h2>
+                <p>（公社）日本観光振興協会では、観光情報データ、宿泊施設ビッグデータをご提供しています。</p>
+                <p>各種申請の際の詳細資料、Webサイトおよびプロモーション等全般についてご利用いただくことが可能です。</p>
+                
+                <h3 style="color: #2196F3; margin: 30px 0 20px 0; font-size: 24px;">（1）全国観光情報データ　観光予報プラットフォーム</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>全国の観光情報・出逢が調査で各都道府県観光協会（財団）等より提供された全国の観光情報を集約し、データベース化しています。</li>
+                    <li>約6万カ所、全国117カ所の観光情報を網羅し、新鮮しています。</li>
+                    <li>季節、イベント、エリア、ジャンル、テーマ等から検索して利用可能となります。</li>
+                    <li>情報はWebサイト「<a href="https://www.japan47go.travel/ja" target="_blank" style="color: #2196F3; text-decoration: underline;">JAPAN 47 GO</a>」（https://www.japan47go.travel/ja）よりご覧いただけます。</li>
+                </ul>
+
+                <h3 style="color: #2196F3; margin: 30px 0 20px 0; font-size: 24px;">（2）宿泊施設ビッグデータ「観光予報プラットフォーム」</h3>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>日本全体の宿泊施設データのうち約1万施設の宿泊実績データ（旅行会社経由、直販ネット販売、外国人ネット販売）をもとに、宿泊実績の実績、予約データを整理しています。</li>
+                    <li>情報はWebサイト「<a href="https://kankouyohou.com" target="_blank" style="color: #2196F3; text-decoration: underline;">観光予報プラットフォーム</a>」（https://kankouyohou.com）よりご覧いただけます。</li>
+                </ul>
+            </section>
+
+            <section class="section" id="downloads">
+                <h2>ダウンロード可能な資料</h2>
+                <p>以下の資料を個別にダウンロードしてご利用いただけます。</p>
+                
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h3>全国観光情報データベース概要</h3>
+                        <p>観光情報データベースの詳細な概要資料です。データ構造や利用方法について説明しています。</p>
+                        <a href="docs/全国観光情報データベース概要.pdf" class="download-btn" download>PDFダウンロード</a>
+                    </div>
+
+                    <div class="download-card">
+                        <h3>サンプルデータ（静態情報）</h3>
+                        <p>全国観光情報DB・ロケーションDBのサンプルデータです。データの形式や内容をご確認いただけます。</p>
+                        <a href="docs/サンプルデータ202402：①静態情報　全国観光情報DB　ロケーションDB.csv" class="download-btn" download>CSVダウンロード</a>
+                    </div>
+
+                    <div class="download-card">
+                        <h3>サンプルデータ（動態情報）</h3>
+                        <p>季節・イベントDBのサンプルデータです。イベント情報や季節性データの形式をご確認いただけます。</p>
+                        <a href="docs/サンプルデータ202402：②動態情報　季節・イベントDB.csv" class="download-btn" download>CSVダウンロード</a>
+                    </div>
+
+                    <div class="download-card">
+                        <h3>API仕様書情報</h3>
+                        <p>APIの詳細仕様書へのリンク情報です。システム連携をお考えの方はこちらをご確認ください。</p>
+                        <a href="docs/新API仕様書リンク.txt" class="download-btn" download>テキストダウンロード</a>
+                    </div>
+
+                    <div class="download-card">
+                        <h3>参考見積書</h3>
+                        <p>2025年度の観光情報データ利用に関する参考見積書です。料金体系の参考にご利用ください。</p>
+                        <a href="docs/観光情報_共通見積書_2025年度.pdf" class="download-btn" download>PDFダウンロード</a>
+                    </div>
+
+                    <div class="download-card">
+                        <h3>「JAPAN 47 GO」概要</h3>
+                        <p>JAPAN 47 GOウェブサイトの概要資料です。サイトの機能や特徴について詳しく説明しています。</p>
+                        <a href="docs/JAPAN47GO概要.pdf" class="download-btn" download>PDFダウンロード</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 style="color: #333; margin-bottom: 20px;">お問い合わせ</h2>
+            <p>観光情報データの利用に関するご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
+            <a href="mailto:info@japan-travel.or.jp?subject=観光情報データ利用について" class="contact-btn">お問い合わせフォーム</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">🗾 JAPAN 47 GO</div>
+                <div class="footer-links">
+                    <a href="#about">このサイトについて</a>
+                    <a href="#data">観光情報データの利用について</a>
+                    <a href="#privacy">プライバシーポリシー</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #555;">
+                <p>&copy; 2025 公益社団法人日本観光振興協会 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
