@@ -34,40 +34,14 @@
 
         .header-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 15px 0;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #A7001D;
-        }
-
-        .logo::before {
-            content: "🗾";
-            margin-right: 10px;
-            font-size: 28px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #A7001D;
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .hero {
@@ -190,28 +164,18 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            font-size: 20px;
-            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .footer-links a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
         }
 
-        .social-links a {
-            color: white;
-            font-size: 24px;
-            margin: 0 10px;
-            text-decoration: none;
+        .footer-links a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -220,11 +184,6 @@
                 gap: 20px;
             }
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
 
             .hero h1 {
                 font-size: 36px;
@@ -249,16 +208,9 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">JAPAN 47 GO</div>
-                <nav>
-                    <ul>
-                        <li><a href="#database">全国観光情報データベース</a></li>
-                        <li><a href="#events">イベントカレンダーから探す</a></li>
-                        <li><a href="#themes">テーマから探す</a></li>
-                        <li><a href="#areas">エリアから探す</a></li>
-                        <li><a href="#stories">地域ストーリー</a></li>
-                    </ul>
-                </nav>
+                <div class="logo">
+                    <img src="japan47go-logo.svg" alt="JAPAN 47 GO">
+                </div>
             </div>
         </div>
     </header>
@@ -317,8 +269,8 @@
 
                     <div class="download-card">
                         <h3>API仕様書情報</h3>
-                        <p>APIの詳細仕様書へのリンク情報です。システム連携をお考えの方はこちらをご確認ください。</p>
-                        <a href="docs/新API仕様書リンク.txt" class="download-btn" download>テキストダウンロード</a>
+                        <p>APIの詳細仕様書です。システム連携をお考えの方はこちらをご確認ください。</p>
+                        <a href="https://kanko.g.kuroco-img.app/files/user/api/redoc-static.html" class="download-btn" target="_blank">API仕様書を見る</a>
                     </div>
 
                     <div class="download-card">
@@ -348,16 +300,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">🗾 JAPAN 47 GO</div>
                 <div class="footer-links">
-                    <a href="#about">このサイトについて</a>
-                    <a href="#data">観光情報データの利用について</a>
-                    <a href="#privacy">プライバシーポリシー</a>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="https://www.japan47go.travel/ja/privacy-policy" target="_blank">プライバシーポリシー</a>
                 </div>
             </div>
             <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #555;">
