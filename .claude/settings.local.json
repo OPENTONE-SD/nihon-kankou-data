@@ -6,7 +6,20 @@
       "Bash(gh repo create:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(cp:*)",
+      "Bash(chmod:*)",
+      "Bash(./deploy.sh:*)",
+      "Bash(aws cloudformation:*)",
+      "Bash(aws s3 rm:*)",
+      "Bash(true)",
+      "Bash(./add-basic-auth.sh:*)",
+      "Bash(aws logs describe-log-groups:*)",
+      "Bash(./update-function.sh)",
+      "Bash(./remove-basic-auth.sh:*)",
+      "Bash(rm:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }
